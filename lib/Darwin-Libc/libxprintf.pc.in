@@ -1,0 +1,15 @@
+#
+# APPLE LICENSE
+#
+
+
+prefix=@prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libxprintf
+Description: A customizable printf() family functions base on OSX(Darwin) xprintf() implementations.
+URL: https://github.com/QbsuranAlang/libxprintf
+Version: @LIBRARY_VERSION@
+Libs: -L${libdir} -lxprintf
+Cflags: -I${includedir}
