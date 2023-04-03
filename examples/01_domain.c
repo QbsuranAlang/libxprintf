@@ -64,9 +64,15 @@ static void pass_arguments_by_variable_arguments(void) {
     }//end if
 
     /* try x_asxprintf() */
-    ret = x_asxprintf(&tmp, domain, "x_asxprintf(): fmt \'%%A\' got \'%s\'\n", &in_addr);
+    ret = x_asxprintf(&tmp, domain, "x_asxprintf(): fmt \'%%A\' got \'%A\'\n", &in_addr);
     if(ret < 0) {
         perror("x_asxprintf()");
+        exit(1);
+    }//end if
+
+    ret = x_fxprintf_std(stdout, domain, "%s", tmp);
+    if(ret < 0) {
+        perror("x_fxprintf_std()");
         exit(1);
     }//end if
     fflush(stdout);
